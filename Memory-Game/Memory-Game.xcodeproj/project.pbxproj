@@ -18,6 +18,8 @@
 		8361A61E26A36F7A0085182C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361A61D26A36F7A0085182C /* GameController.swift */; };
 		8361A62026A378870085182C /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361A61F26A378870085182C /* CardCell.swift */; };
 		8361A62226A37BBE0085182C /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361A62126A37BBE0085182C /* Manager.swift */; };
+		83B9005126A57CFA00AA2A1C /* TopTenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B9005026A57CFA00AA2A1C /* TopTenController.swift */; };
+		83B9005326A5845200AA2A1C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B9005226A5845200AA2A1C /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		8361A61D26A36F7A0085182C /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		8361A61F26A378870085182C /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		8361A62126A37BBE0085182C /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		83B9005026A57CFA00AA2A1C /* TopTenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenController.swift; sourceTree = "<group>"; };
+		83B9005226A5845200AA2A1C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				8361A61D26A36F7A0085182C /* GameController.swift */,
 				8361A61F26A378870085182C /* CardCell.swift */,
 				8361A62126A37BBE0085182C /* Manager.swift */,
+				83B9005026A57CFA00AA2A1C /* TopTenController.swift */,
+				83B9005226A5845200AA2A1C /* CustomButton.swift */,
 			);
 			path = "Memory-Game";
 			sourceTree = "<group>";
@@ -155,6 +161,8 @@
 				8361A62026A378870085182C /* CardCell.swift in Sources */,
 				8361A60A26A366C00085182C /* ViewController.swift in Sources */,
 				8361A61E26A36F7A0085182C /* GameController.swift in Sources */,
+				83B9005126A57CFA00AA2A1C /* TopTenController.swift in Sources */,
+				83B9005326A5845200AA2A1C /* CustomButton.swift in Sources */,
 				8361A62226A37BBE0085182C /* Manager.swift in Sources */,
 				8361A60626A366C00085182C /* AppDelegate.swift in Sources */,
 				8361A61C26A3686D0085182C /* MemoryGame.swift in Sources */,

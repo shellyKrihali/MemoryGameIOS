@@ -18,6 +18,14 @@ class MemoryGame{
     var cards: [Card] = [Card]()
     var cardsShown: [Card] = [Card]()
     var isPlaying: Bool = false
+    var count: Int = 0
+    
+    func setCount(count: Int){
+        self.count = count
+    }
+    func getCount() -> Int{
+        return self.count
+    }
     
     func shuffleCards(cards: [Card]) -> [Card]{
         var randonCards = cards
@@ -29,12 +37,13 @@ class MemoryGame{
         isPlaying = true
         
         delegate?.memoryGameDidStart(self)
-
+        self.count = 0
         return cards
     }
     func restartGame(){
         isPlaying = false
         cards.removeAll()
+        self.count = 0
         cardsShown.removeAll()
     }
     func cardAtIndex(_ index: Int) -> Card?{
@@ -77,6 +86,7 @@ class MemoryGame{
                      self.delegate?.memoryGame(self, hideCards:[card, secondCard])
                  }
             }
+            self.count += 1
         }
         else{
             cardsShown.append(card)

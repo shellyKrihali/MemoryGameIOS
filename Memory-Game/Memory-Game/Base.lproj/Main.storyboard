@@ -18,12 +18,115 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JGH-WU-2da" kind="relationship" relationship="rootViewController" id="zFd-Ip-3Qr"/>
+                        <segue destination="8zI-uI-zhh" kind="relationship" relationship="rootViewController" id="ZJ1-93-xGm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFN-yM-XO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-411" y="54"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SUE-jA-4Ig">
+            <objects>
+                <viewController id="8zI-uI-zhh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5hK-Kb-5OW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="WhatsApp Image 2021-07-19 at 01.37.27" translatesAutoresizingMaskIntoConstraints="NO" id="JgM-KX-fLk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIc-vy-rzN" customClass="CustomButton" customModule="Memory_Game" customModuleProvider="target">
+                                <rect key="frame" x="80" y="372" width="254" height="57"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="JGH-WU-2da" kind="show" id="MkM-bU-geZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1G-Di-kmm">
+                                <rect key="frame" x="90" y="242" width="234" height="60"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="46"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQm-3Y-qHo" customClass="CustomButton" customModule="Memory_Game" customModuleProvider="target">
+                                <rect key="frame" x="80" y="484" width="254" height="57"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
+                                <state key="normal" title="TOP TEN">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="g1d-XJ-YJv" kind="show" id="Rfk-JG-ubz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lwW-bX-u5n"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B1G-Di-kmm" firstAttribute="leading" secondItem="lwW-bX-u5n" secondAttribute="leading" constant="90" id="1g3-2u-Y1f"/>
+                            <constraint firstItem="lwW-bX-u5n" firstAttribute="bottom" secondItem="JgM-KX-fLk" secondAttribute="bottom" id="2yb-Qz-BSu"/>
+                            <constraint firstItem="lwW-bX-u5n" firstAttribute="trailing" secondItem="B1G-Di-kmm" secondAttribute="trailing" constant="90" id="3ni-Ui-3zj"/>
+                            <constraint firstItem="lwW-bX-u5n" firstAttribute="trailing" secondItem="ZQm-3Y-qHo" secondAttribute="trailing" constant="80" id="4QS-Bv-0Tr"/>
+                            <constraint firstItem="JgM-KX-fLk" firstAttribute="top" secondItem="lwW-bX-u5n" secondAttribute="top" id="81J-4e-1qp"/>
+                            <constraint firstItem="lwW-bX-u5n" firstAttribute="trailing" secondItem="DIc-vy-rzN" secondAttribute="trailing" constant="80" id="Hmg-ET-qUw"/>
+                            <constraint firstItem="JgM-KX-fLk" firstAttribute="trailing" secondItem="lwW-bX-u5n" secondAttribute="trailing" id="XAe-Hx-6Rx"/>
+                            <constraint firstItem="B1G-Di-kmm" firstAttribute="top" secondItem="lwW-bX-u5n" secondAttribute="top" constant="154" id="aj3-5p-Hqi"/>
+                            <constraint firstItem="DIc-vy-rzN" firstAttribute="top" secondItem="B1G-Di-kmm" secondAttribute="bottom" constant="70" id="jrk-Xa-9IN"/>
+                            <constraint firstItem="DIc-vy-rzN" firstAttribute="top" secondItem="B1G-Di-kmm" secondAttribute="bottom" constant="70" id="lHx-C0-hu5"/>
+                            <constraint firstItem="ZQm-3Y-qHo" firstAttribute="top" secondItem="DIc-vy-rzN" secondAttribute="bottom" constant="55" id="n4o-YA-MYB"/>
+                            <constraint firstItem="JgM-KX-fLk" firstAttribute="leading" secondItem="lwW-bX-u5n" secondAttribute="leading" id="roe-O7-eAG"/>
+                            <constraint firstItem="DIc-vy-rzN" firstAttribute="leading" secondItem="lwW-bX-u5n" secondAttribute="leading" constant="80" id="xMo-m1-jTM"/>
+                            <constraint firstItem="ZQm-3Y-qHo" firstAttribute="leading" secondItem="lwW-bX-u5n" secondAttribute="leading" constant="80" id="zaK-5t-bKZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aB0-TB-UTT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96D-H1-bMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-413.04347826086962" y="772.76785714285711"/>
+        </scene>
+        <!--Top Ten Controller-->
+        <scene sceneID="qrR-EU-18l">
+            <objects>
+                <viewController id="g1d-XJ-YJv" customClass="TopTenController" customModule="Memory_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QCD-hc-YDb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatsApp Image 2021-07-19 at 01.37.27" id="xR0-GL-X64">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XjO-hR-qTg">
+                                <rect key="frame" x="20" y="149" width="374" height="294"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top Ten High Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTu-am-YjC">
+                                <rect key="frame" x="20" y="104" width="374" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="82T-Sf-99w">
+                                <rect key="frame" x="20" y="475" width="374" height="325"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Kp-Ge-GZZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7Qj-7S-kjd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAW-8A-qTu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386.95652173913044" y="772.76785714285711"/>
         </scene>
         <!--Game Controller-->
         <scene sceneID="upJ-Wk-zAu">
@@ -33,11 +136,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_img" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-HQ-dSh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatsApp Image 2021-07-19 at 01.37.27" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-HQ-dSh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qzR-wh-Nhf">
-                                <rect key="frame" x="0.0" y="146" width="430" height="627"/>
+                                <rect key="frame" x="0.0" y="146" width="414" height="627"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a3A-8j-gQy">
@@ -54,14 +157,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijh-OM-J9x">
-                                                    <rect key="frame" x="-56" y="0.0" width="240" height="128"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijh-OM-J9x">
+                                                    <rect key="frame" x="8" y="0.0" width="60" height="106"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNv-MV-sPC">
-                                                    <rect key="frame" x="-56" y="0.0" width="240" height="128"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backcard" translatesAutoresizingMaskIntoConstraints="NO" id="NNv-MV-sPC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="120"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.59460764710000003" blue="0.07549967296" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
@@ -76,50 +180,61 @@
                                     <outlet property="delegate" destination="JGH-WU-2da" id="dGc-6k-QVa"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gu-6q-7Xk">
-                                <rect key="frame" x="20" y="100" width="113" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.8084375291" blue="0.33766198190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="PLAY"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeU-L0-QzH">
+                                <rect key="frame" x="284" y="98" width="110" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eib-IB-V0u">
+                                <rect key="frame" x="26" y="98" width="92.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UV-nU-IMo">
+                                <rect key="frame" x="128.5" y="98" width="77" height="37"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gu-6q-7Xk" customClass="CustomButton" customModule="Memory_Game" customModuleProvider="target">
+                                <rect key="frame" x="18" y="796" width="100" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="API-KU-AQr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
                                 <connections>
                                     <action selector="startGameTapped:" destination="JGH-WU-2da" eventType="touchUpInside" id="IDp-9t-3rh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeU-L0-QzH">
-                                <rect key="frame" x="297" y="109" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Counter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eib-IB-V0u">
-                                <rect key="frame" x="69" y="801" width="145" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UV-nU-IMo">
-                                <rect key="frame" x="222" y="806" width="80" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MqA-ZA-qsJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2Gu-6q-7Xk" firstAttribute="leading" secondItem="MqA-ZA-qsJ" secondAttribute="leading" constant="20" id="67V-lU-DGC"/>
+                            <constraint firstItem="MqA-ZA-qsJ" firstAttribute="trailing" secondItem="VeU-L0-QzH" secondAttribute="trailing" constant="20" id="8bW-84-mOx"/>
+                            <constraint firstItem="9UV-nU-IMo" firstAttribute="leading" secondItem="eib-IB-V0u" secondAttribute="trailing" constant="10" id="A69-wh-HgU"/>
+                            <constraint firstItem="eib-IB-V0u" firstAttribute="top" secondItem="MqA-ZA-qsJ" secondAttribute="top" constant="10" id="Anl-uO-01H"/>
                             <constraint firstItem="5ej-HQ-dSh" firstAttribute="trailing" secondItem="MqA-ZA-qsJ" secondAttribute="trailing" id="IYc-gY-QaR"/>
+                            <constraint firstItem="VeU-L0-QzH" firstAttribute="top" secondItem="MqA-ZA-qsJ" secondAttribute="top" constant="10" id="SBj-3w-sZ8"/>
+                            <constraint firstItem="9UV-nU-IMo" firstAttribute="top" secondItem="MqA-ZA-qsJ" secondAttribute="top" constant="10" id="VsA-lX-CdX"/>
                             <constraint firstItem="5ej-HQ-dSh" firstAttribute="leading" secondItem="MqA-ZA-qsJ" secondAttribute="leading" id="YUv-NG-tBR"/>
                             <constraint firstAttribute="bottom" secondItem="5ej-HQ-dSh" secondAttribute="bottom" id="ciY-05-9gS"/>
+                            <constraint firstItem="eib-IB-V0u" firstAttribute="leading" secondItem="MqA-ZA-qsJ" secondAttribute="leading" constant="26" id="dI4-qo-kDo"/>
                             <constraint firstItem="5ej-HQ-dSh" firstAttribute="top" secondItem="57p-0g-EA6" secondAttribute="top" id="pFC-Uf-aUy"/>
+                            <constraint firstItem="MqA-ZA-qsJ" firstAttribute="bottom" secondItem="2Gu-6q-7Xk" secondAttribute="bottom" constant="15" id="tfS-SB-GNv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xKo-Hd-jj2"/>
                     <connections>
                         <outlet property="collectionView" destination="qzR-wh-Nhf" id="DsY-b9-hWk"/>
                         <outlet property="counterLabel" destination="9UV-nU-IMo" id="WO4-w5-IMR"/>
+                        <outlet property="timerLabel" destination="VeU-L0-QzH" id="O6i-6f-tNM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3U-Ym-qiw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -128,8 +243,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background_img" width="168" height="299"/>
+        <image name="WhatsApp Image 2021-07-19 at 01.37.27" width="236" height="419"/>
+        <image name="backcard" width="161" height="223"/>
         <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
