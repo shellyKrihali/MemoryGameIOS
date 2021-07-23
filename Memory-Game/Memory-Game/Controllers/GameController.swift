@@ -6,25 +6,39 @@
 //
 
 import UIKit
-
+import CoreLocation
 class GameController: UIViewController {
  
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
-    
-    
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var counterLabel: UILabel!
+    
     fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
 
     let game = MemoryGame()
     var cards = [Card]()
     var counter :Int = 0
     var timer = Timer()
+    let location = CLLocationManager()
+    var lng: Double = 0.0
+    var lat: Double = 0.0
+    var highScoreManager = HighScoreManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Ask for Authorisation from the User.
+        self.location.requestAlwaysAuthorization()
+
+        // For use in foreground
+        self.location.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            location.delegate = self
+            location.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            location.startUpdatingLocation()
+        }
         
         game.delegate = self
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
@@ -51,7 +65,45 @@ class GameController: UIViewController {
             resetGame()
         }
     }
-    
+    func showHighScoreDialog(){
+        let dialog = UIAlertController(title: "New Highscore!", message: "Please enter your name:", preferredStyle: .alert)
+        let timerCounter = self.counter
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { UIAlertAction in
+        let name = dialog.textFields![0].text
+        let highScore = HighScore(id: UUID().uuidString, name: name ?? "UnNamed", timeBest: timerCounter, lang: self.lng, lat: self.lat)
+                  self.highScoreManager.insertHighScore(highScore: highScore)
+                self.showEndDialog()
+              }
+        submitAction.isEnabled = false
+               dialog.addTextField { textField in
+                   NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: OperationQueue.main) { _ in
+                       let textCounter = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines).count ?? 0
+                       let textIsNotEmpty = textCounter > 0
+                       submitAction.isEnabled = textIsNotEmpty
+                   }
+    }
+        dialog.addAction(submitAction)
+        present(dialog, animated: true, completion: nil)
+    }
+    func showEndDialog(){
+        let alertController = UIAlertController(
+                  title: "Good job!",
+                  message: "Want to play again?",
+                  preferredStyle: .alert)
+              
+              let cancelAction = UIAlertAction(title: "No", style: .cancel) { [weak self] (action) in
+                self?.collectionView.isHidden = true
+                self?.navigationController?.popToRootViewController(animated: true)              }
+              let playAgainAction = UIAlertAction(title: "Yes!", style: .default) { [weak self] (action) in
+                  self?.collectionView.isHidden = false
+                  self?.resetGame()
+              }
+              
+              alertController.addAction(cancelAction)
+              alertController.addAction(playAgainAction)
+              
+              self.present(alertController, animated: true) { }
+    }
     func setupNewGame(){
         counter = 0
         self.counterLabel.text = String(self.game.count)
@@ -80,7 +132,7 @@ class GameController: UIViewController {
           counter += 1
         self.counterLabel.text = String(self.game.count)
       }
-
+  
 }
     
     extension GameController: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -130,27 +182,15 @@ extension GameController: MemoryGameProtocol{
     }
     
     func memoryGameDidEnd(_ game: MemoryGame) {
-        self.counter = 0
         
-        let alertController = UIAlertController(
-                  title: "Good job!",
-                  message: "Want to play again?",
-                  preferredStyle: .alert)
-              
-              let cancelAction = UIAlertAction(title: "No", style: .cancel) { [weak self] (action) in
-                  self?.collectionView.isHidden = true
-                self?.navigationController?.popToRootViewController(animated: true)              }
-              let playAgainAction = UIAlertAction(title: "Yes!", style: .default) { [weak self] (action) in
-                  self?.collectionView.isHidden = false
-                  self?.resetGame()
-              }
-              
-              alertController.addAction(cancelAction)
-              alertController.addAction(playAgainAction)
-              
-              self.present(alertController, animated: true) { }
-              
-              resetGame()
+        timer.invalidate()
+        if(highScoreManager.checkIfHighScore(time: counter)){
+            self.showHighScoreDialog()
+        } else{
+            self.showEndDialog()
+
+        }
+        resetGame()
     }
   
 }
@@ -162,11 +202,7 @@ extension GameController: UICollectionViewDelegateFlowLayout {
         let paddingSpace = Int(sectionInsets.left) * 4
         let availableWidth = Int(view.frame.width) - paddingSpace
         let widthPerItem = availableWidth / 4
-       /* let width = Int(view.frame.width) - 70
-            let widthPerItem = width / 4
-            var res = CGSize(width: widthPerItem, height: widthPerItem)
-            res.height = (collectionViewLayout.collectionView!.visibleSize.height / 4 - CGFloat(20))
-            return res*/
+     
         
         return CGSize(width: widthPerItem, height: widthPerItem + 50)
     }
@@ -177,6 +213,14 @@ extension GameController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+}
+extension GameController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        self.lat = locValue.latitude
+        self.lng = locValue.longitude
+      
     }
 }
     

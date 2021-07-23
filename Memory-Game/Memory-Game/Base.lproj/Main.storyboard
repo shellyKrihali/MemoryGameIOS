@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="WhatsApp Image 2021-07-19 at 01.37.27" translatesAutoresizingMaskIntoConstraints="NO" id="JgM-KX-fLk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" image="baground_black" translatesAutoresizingMaskIntoConstraints="NO" id="JgM-KX-fLk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIc-vy-rzN" customClass="CustomButton" customModule="Memory_Game" customModuleProvider="target">
@@ -98,35 +98,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatsApp Image 2021-07-19 at 01.37.27" id="xR0-GL-X64">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="baground_black" id="xR0-GL-X64">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XjO-hR-qTg">
-                                <rect key="frame" x="20" y="149" width="374" height="294"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top Ten High Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTu-am-YjC">
-                                <rect key="frame" x="20" y="104" width="374" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
-                                <nil key="textColor"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zAC-M9-PbO">
+                                <rect key="frame" x="16" y="145" width="382" height="284"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XjO-hR-qTg">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="132"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="highScoreCell" id="eNl-EL-0Zj">
+                                                <rect key="frame" x="0.0" y="24.5" width="382" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eNl-EL-0Zj" id="4gb-FK-zTO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="g1d-XJ-YJv" id="xmD-El-Jtk"/>
+                                            <outlet property="delegate" destination="g1d-XJ-YJv" id="ylB-tQ-1nn"/>
+                                        </connections>
+                                    </tableView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="82T-Sf-99w">
+                                        <rect key="frame" x="0.0" y="152" width="382" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </mapView>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal" spacing="20"/>
+                                <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
+                                <variation key="heightClass=regular-widthClass=regular" axis="vertical"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Ten High Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTu-am-YjC">
+                                <rect key="frame" x="76" y="93" width="272" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2IT-9B-4Zn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="82T-Sf-99w">
-                                <rect key="frame" x="20" y="475" width="374" height="325"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Kp-Ge-GZZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zAC-M9-PbO" firstAttribute="top" secondItem="XTu-am-YjC" secondAttribute="bottom" constant="10" id="By2-cA-3iE"/>
+                            <constraint firstItem="8Kp-Ge-GZZ" firstAttribute="bottom" secondItem="zAC-M9-PbO" secondAttribute="bottom" id="GxN-oN-60R"/>
+                            <constraint firstItem="XTu-am-YjC" firstAttribute="centerX" secondItem="QCD-hc-YDb" secondAttribute="centerX" constant="5" id="OfR-pN-g1k"/>
+                            <constraint firstItem="8Kp-Ge-GZZ" firstAttribute="trailing" secondItem="zAC-M9-PbO" secondAttribute="trailing" constant="16" id="Y9Q-qj-H22"/>
+                            <constraint firstItem="zAC-M9-PbO" firstAttribute="leading" secondItem="8Kp-Ge-GZZ" secondAttribute="leading" constant="16" id="YxN-zi-AgG"/>
+                            <constraint firstItem="XTu-am-YjC" firstAttribute="top" secondItem="8Kp-Ge-GZZ" secondAttribute="top" constant="5" id="eUx-Wu-qJP"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7Qj-7S-kjd"/>
+                    <navigationItem key="navigationItem" id="7Qj-7S-kjd">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="f8E-zd-lZ3">
+                            <rect key="frame" x="207" y="22" width="0.0" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="82T-Sf-99w" id="H43-uq-lFX"/>
+                        <outlet property="table" destination="XjO-hR-qTg" id="1Vr-Hc-u5a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAW-8A-qTu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386.95652173913044" y="772.76785714285711"/>
+            <point key="canvasLocation" x="384.05797101449281" y="770.75892857142856"/>
         </scene>
         <!--Game Controller-->
         <scene sceneID="upJ-Wk-zAu">
@@ -136,7 +179,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatsApp Image 2021-07-19 at 01.37.27" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-HQ-dSh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="baground_black" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-HQ-dSh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qzR-wh-Nhf">
@@ -243,8 +286,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="WhatsApp Image 2021-07-19 at 01.37.27" width="236" height="419"/>
         <image name="backcard" width="161" height="223"/>
+        <image name="baground_black" width="236" height="419"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

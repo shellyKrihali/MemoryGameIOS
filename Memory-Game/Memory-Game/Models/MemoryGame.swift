@@ -74,7 +74,6 @@ class MemoryGame{
         delegate?.memoryGame(self, showCards: [card])
 
         
-        
         if (unmatchedCardShown()){
             let unmatched = unmatchedCard()!
             if (card.equals(unmatched)){
