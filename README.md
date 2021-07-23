@@ -1,9 +1,8 @@
 # MemoryGameIOS
-This is an IOS app to play memory game with cards, and saves top ten quickest players wuth their location
+This is an IOS app to play memory game with cards, and saves top ten quickest players with their location
 
 ## Login Screen
-![image](https://user-images.githubusercontent.com/46194686/126328764-b916f374-bc1b-4a0b-9c05-7897146775ec.png) 
-
+![Simulator Screen Shot - iPhone 12 Pro - 2021-07-23 at 02 00 15](https://user-images.githubusercontent.com/57193219/126762313-c6f8dbc6-21cb-4026-abee-5af87cab7f12.png)
 # Play Screens
 # Once you break a new record
 # TopTen Screen
